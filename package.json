@@ -1,0 +1,24 @@
+{
+  "name": "url-patch",
+  "version": "0.1.0",
+  "description": "wrangle squirly urls",
+  "main": "patcher.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coldpour/url-patch.git"
+  },
+  "keywords": [
+    "url",
+    "patch",
+    "http"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coldpour/url-patch/issues"
+  },
+  "homepage": "https://github.com/coldpour/url-patch"
+}
