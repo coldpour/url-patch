@@ -1,9 +1,14 @@
 var patchProtocol = (url) => {
   var protocolStr = 'http://';
-  if(!url.startsWith(protocolStr)) {
-    url = protocolStr + url;
+  if(url.substr(0,5) == 'https') {
+    return url;
   }
-  return url;
+  else if (url.substr(0,4) == 'http') {
+    return url;
+  }
+  else {
+    return protocolStr + url;
+  }
 };
 
 var patchTrailingSlash = (url) => {
