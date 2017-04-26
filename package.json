@@ -1,10 +1,10 @@
 {
   "name": "url-patch",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "wrangle squirly urls",
   "main": "patcher.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -15,10 +15,13 @@
     "patch",
     "http"
   ],
-  "author": "",
+  "author": "Mike Holm <coldpour@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/coldpour/url-patch/issues"
   },
-  "homepage": "https://github.com/coldpour/url-patch"
+  "homepage": "https://github.com/coldpour/url-patch",
+  "devDependencies": {
+    "mocha": "3.3.0"
+  }
 }

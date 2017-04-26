@@ -1,26 +1,26 @@
-var patchProtocol = (url) => {
-  var protocolStr = 'http://';
-  if(url.substr(0,5) == 'https') {
+function patchProtocol (url) {
+  var httpProto = 'http://';
+  var httpsProto = 'https://';
+  if(url.startsWith(httpsProto) || url.startsWith(httpProto)) {
     return url;
-  }
-  else if (url.substr(0,4) == 'http') {
-    return url;
-  }
-  else {
-    return protocolStr + url;
+  } else {
+    return httpProto + url;
   }
 };
 
-var patchTrailingSlash = (url) => {
-  var lastIndex = url.length-1;
-  if(url.endsWith('/')) {
-    url = url.substr(0, lastIndex);
+function removeTrailingSlashes(url) {
+  var i = url.length - 1;
+  while (i > 0 && url[i] === '/') {
+    i--;
+  }
+  return url.substr(0, i+1);
+};
+
+function patchUrl(url) {
+  if(url && typeof url === "string") {
+    return patchProtocol(removeTrailingSlashes(url));
   }
   return url;
-};
-
-var patchUrl = (url) => {
-  return patchProtocol(patchTrailingSlash(url));
 };
 
 module.exports = patchUrl;
